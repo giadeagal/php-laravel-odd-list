@@ -40,7 +40,7 @@ export default{
                 },
                 {
                     label: 'Posts',
-                    routeName:"post"
+                    routeName:"post-details"
                 },
                 {
                     label: "Contatti",
