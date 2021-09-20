@@ -39,6 +39,10 @@ export default{
                     routeName: "about"
                 },
                 {
+                    label: 'Posts',
+                    routeName:"post"
+                },
+                {
                     label: "Contatti",
                     routeName: "contact"
                 }
