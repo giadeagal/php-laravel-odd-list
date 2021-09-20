@@ -8,9 +8,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
-                        <a class="nav-link" href="#">Pricing</a>
+                        <router-link class="nav-item nav-link" 
+                        v-for="obj,i in navList" :key="i"
+                        :to="{ name: obj.routeName}">
+                            {{ obj.label }}
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -21,7 +23,25 @@
 <script>
 
 export default{
-    name: "Header"
+    name: "Header",
+    data() {
+        return {
+            navList: [
+                {
+                    label: "Home",
+                    routeName: "home"
+                },
+                {
+                    label: "Chi siamo",
+                    routeName: "about"
+                },
+                {
+                    label: "Contatti",
+                    routeName: "contact"
+                }
+            ]
+        }
+    }
 }
 </script>
 
