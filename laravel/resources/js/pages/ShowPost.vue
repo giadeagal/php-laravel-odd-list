@@ -7,11 +7,13 @@
 
         <p class="py-3">{{post.content}}</p>
 
-        <span class="badge badge-primary p-1 mr-2"
-        v-for="tag in post.tags"
-        :key="tag.id">
-            {{tag.name}}
-        </span>
+        <div class="badge-wrapper" v-if="post.tags.length">
+            <span class="badge badge-primary p-1 mr-2"
+            v-for="tag in post.tags"
+            :key="tag.id">
+                {{tag.name}}
+            </span>
+        </div>
 
     </div>
 </template>
