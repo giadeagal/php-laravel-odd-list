@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-    
+    <h1 class="mt-3">{{post.title}}</h1>
+    <p class="py-3">{{post.content}}</p>
     </div>
 </template>
 

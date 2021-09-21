@@ -1945,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
         routeName: "about"
       }, {
         label: 'Posts',
-        routeName: "post"
+        routeName: "post-details"
       }, {
         label: "Contatti",
         routeName: "contact"
@@ -2192,13 +2192,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ShowPost',
   data: function data() {
@@ -2211,6 +2204,7 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('/api/post/' + this.$route.params.slug).then(function (x) {
       _this.post = x.data.results;
+      console.log(_this.post);
     });
   }
 });
@@ -38409,26 +38403,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container my-5" }, [
-    _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-header" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("h5", { staticClass: "card-title" }, [
-          _vm._v(_vm._s(_vm.post.title))
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "card-text" }, [
-          _vm._v(
-            "With supporting text below as a natural lead-in to additional content."
-          )
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-          _vm._v("Go somewhere")
-        ])
-      ])
-    ])
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", { staticClass: "mt-3" }, [_vm._v(_vm._s(_vm.post.title))]),
+    _vm._v(" "),
+    _c("p", { staticClass: "py-3" }, [_vm._v(_vm._s(_vm.post.content))])
   ])
 }
 var staticRenderFns = []
@@ -54432,7 +54410,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'post',
     component: _pages_Post__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
-    path: '/posts/:slug',
+    path: '/post/:slug',
     name: 'post-details',
     component: _pages_ShowPost__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
