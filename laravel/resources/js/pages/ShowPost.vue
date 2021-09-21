@@ -7,20 +7,18 @@
 
         <p class="py-3">{{post.content}}</p>
 
-        <div class="badge-wrapper" v-if="post.tags.length">
-            <span class="badge badge-primary p-1 mr-2"
-            v-for="tag in post.tags"
-            :key="tag.id">
-                {{tag.name}}
-            </span>
-        </div>
+        <Tag :tags="post.tags"/>
 
     </div>
 </template>
 
 <script>
+import Tag from '../components/Tag.vue'
 export default {
     name:'ShowPost',
+    components: {
+        Tag
+    },
     data(){
         return {
             post: []
