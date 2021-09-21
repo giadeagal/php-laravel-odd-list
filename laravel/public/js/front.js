@@ -1945,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
         routeName: "about"
       }, {
         label: 'Posts',
-        routeName: "post-details"
+        routeName: "post"
       }, {
         label: "Contatti",
         routeName: "contact"
