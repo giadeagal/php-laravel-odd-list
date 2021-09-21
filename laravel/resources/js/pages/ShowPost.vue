@@ -1,7 +1,18 @@
 <template>
     <div class="container">
-    <h1 class="mt-3">{{post.title}}</h1>
-    <p class="py-3">{{post.content}}</p>
+
+        <h1 class="mt-3">{{post.title}}</h1>
+
+        <h4 v-if="post.category">{{post.category.name}}</h4>
+
+        <p class="py-3">{{post.content}}</p>
+
+        <span class="badge badge-primary p-1 mr-2"
+        v-for="tag in post.tags"
+        :key="tag.id">
+            {{tag.name}}
+        </span>
+
     </div>
 </template>
 
